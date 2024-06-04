@@ -1,7 +1,6 @@
 const url1 = 'https://swapi.dev/api/films/';
 const url2 = 'https://swapi.dev/api/people/'
 const pelicula = [];
-const anos = [];
 const ano = [];
 const ctx = document.getElementById('myChart');
 const ctx1 = document.getElementById('myChart1');
@@ -56,7 +55,7 @@ const callAsyncLogic = async()=>{
         options: {
             scales: {
                 y: {
-                    beginAtZero: false
+                    beginAtZero: true
                 }
             }
         }
@@ -83,7 +82,7 @@ llamarAPIPrimero()
         })
 
         new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: pelicula,
                 datasets: [{
